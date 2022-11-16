@@ -16,6 +16,12 @@ namespace MvcCv.Controllers
             var degerler = db.tblHakkimda.ToList();
             return View(degerler);
         }
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyal = db.tblSosyalMedya.Where(x=>x.Durum==true).ToList();
+            return PartialView(sosyal);
+        }
+
 
         public PartialViewResult Deneyim()
         {
